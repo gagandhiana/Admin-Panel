@@ -1,0 +1,336 @@
+body{
+	margin: 0;
+	font-family: arial;
+}
+
+/* -----------    business administration - 1     ------------*/
+
+
+.logocontainer{
+	width: 1200px;
+	height: 100px;
+	
+	margin: auto;
+}
+.logo{
+	margin-top: 0;
+}
+img{
+	width: 150px;
+    height: 90px;
+}
+.nav{
+	width: 100%;
+	height: 40px;
+	background-color: #1c5978;
+}
+.date{
+	width: 1200px;
+	height: 50px;
+	
+	margin: auto;
+}
+h3{
+	color: white;
+	margin-bottom: 20px;
+	text-align: bottom;
+	float: left;
+	margin-bottom: 0;
+}
+.innercontainer{
+	width: 100%;
+	height: 600px;
+	
+}
+.innercontainer1{
+	width: 1200px;
+	height: 600px;
+	
+	margin: auto;
+}
+.table{
+	margin-left: 500px;
+	margin-top: 50px;
+}
+.login{
+	background-color: #1c5978; 
+	color: white; width: 55px; 
+	padding: 5px; 
+	border: #1c5978;
+}
+span{
+	color: #1c5978;
+	font-size: 25px;
+	font-weight: bold;
+	
+}
+.footer{
+	width: 100%;
+	height: 40px;
+	background-color: #1c5978;
+}
+
+/* -----------    business administration - 2     ------------*/
+
+.right{
+	width: 950px;
+	height: 750px;
+	
+	float: right;
+	
+}
+.righth3{
+	color: #1c5978;
+}
+.righttable{
+	margin-top: 50px; 
+	width: 950px; 
+	border: 1px solid grey;
+	border-collapse: collapse;
+	padding-left: 10px;
+}
+.righttabletd{
+	font-weight: bold;
+	/*background-color: lightgrey;*/
+	border-bottom: 1px solid grey;
+}
+.righttable1{
+	width: 98%;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	margin-left: 10px;
+}
+.righttable1 tr td{
+	border-bottom: 1px solid grey;
+
+}
+.td1{
+	text-align: right; 
+	width: 200px; 
+	padding: 3px; 
+	font-size: 14px;
+}
+.td112{
+	width: 550px;
+}
+.select2{
+	width: 200px; height: 25px;
+}
+.td2{
+	text-align: right; 
+	padding: 3px; 
+	font-size: 14px;
+	width: 500px;
+}
+.td22{
+	width: 190px; 
+	height: 20px;
+}
+.td3{
+	text-align: right; 
+	padding: 3px; 
+	font-size: 14px;
+}
+.td33{
+	width: 190px; 
+	height: 20px;
+}
+.td4{
+	text-align: right; 
+	padding: 3px; 
+	font-size: 14px;
+}
+.td44{
+	width: 190px; 
+	height: 50px;
+}
+.td5{
+	text-align: right; 
+	padding: 3px; 
+	font-size: 14px;
+}
+.td55{
+	width: 190px; 
+	height: 50px;
+}
+.tdimg6{
+	width: 710px; 
+	height: 50px;
+}
+.td7{
+	text-align: right; 
+	padding: 3px; 
+	font-size: 14px;
+}
+.td77{
+	width: 700px; 
+	height: 250px;
+}
+.td8{
+	text-align: right; 
+	padding: 3px; 
+	font-size: 14px;
+}
+.td88{
+	width: 200px;
+}
+.td9{
+	text-align: right; 
+	padding: 3px; 
+	font-size: 14px;
+}
+.td99{
+	width: 200px;
+}
+.td10{
+	text-align: right; 
+	padding: 3px; 
+	font-size: 14px;
+}
+.td11{
+	background-color: #1c5978; 
+	color: white; 
+	border: #1c5978; 
+	height: 25px;
+}
+.td111{
+	background-color: #1c5978; 
+	color: white; 
+	border: #1c5978; 
+	height: 25px;
+}
+.left{
+	width: 250px;
+	height: 750px;
+	
+}
+.star{
+	color: red;
+	font-size: 20px;
+}
+.logout{
+	width: 100px;
+	height: 25px;
+	background-color: grey;
+	
+	text-align: center;
+	float: right;
+}
+.left ul{
+	list-style: none;
+	padding: 0;
+	margin-top: 0;
+	margin-right: 20px;
+	font-size: 16px;
+
+}
+.left ul li{
+	border: 1px solid black;
+	padding: 7px;
+
+
+}
+.li1{
+	color: #1c5978;
+	height: 35px;
+	font-weight: bold;
+}
+.li{
+	color: #1c5978;
+	padding: 10px;
+	font-weight: bold;
+}
+.li5{
+	color: grey;
+	font-size: 12px;
+}
+/* -----------    business administration - 3     ------------*/
+.heading3{
+	color: #1c5978;
+}
+.underh3{
+	margin-top: 50px;
+}
+.heading5{
+	margin-top: 10px; 
+	margin-bottom: 10px; 
+	font-size: 14px;
+}
+.upper{
+	width: 950px;
+	height: 30px;
+	
+	text-align: center;
+	font-size: 16px;
+	margin-top: 0px;
+	border: 1px solid grey;
+}
+.upperspan1{
+	color: blue;
+	font-weight: bold;
+	font-size: 14px;
+}
+.middle{
+	width: 950px;
+	border-collapse: collapse;
+	margin-top: 10px;
+	font-size: 14px;
+}
+.middle1{
+	height: 26px; 
+	font-weight: bold; 
+	background-color: lightgrey;
+}
+.middle2{
+	height: 26px; 
+	font-weight: bold;
+}
+.minput1{
+	margin-left: 65px; 
+	width: 250px; 
+	height: 20px;
+}
+.select3{
+	margin-left: 60px; 
+	width: 258px; 
+	height: 20px;
+}
+.minput2{
+	width: 82px; 
+	background-color: #1c5978; 
+	border-color: #1c5978; 
+	height: 20px;
+}
+.middleh5{
+	font-size: 14px;
+}
+.lower{
+	width: 950px;
+	text-align: center;
+	height: fit-content;
+	border-collapse: collapse;
+	border-color: black;
+	margin-top: 20px;
+}
+.lowertheading{
+	background-color: lightgrey
+}
+.lower1{
+	border: 1px solid black;
+	height: 45px;
+}
+.deletebtn{
+	background-color: #1c5978; 
+	color: white; 
+	height: 25px; 
+	width: 60px;
+}
+.leftlower{
+	font-size: 16px;
+	color: black;
+	margin-left: 110px;
+}
+.rightlower{
+	margin-left: 657px;
+	margin-bottom: 10px;
+}
