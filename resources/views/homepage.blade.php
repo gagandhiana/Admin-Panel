@@ -30,7 +30,7 @@
 							</tr>
 							<tr>
 								<td></td>
-								<td><img src="images\2.jpg" class="tdimg6"></td>
+								<td><img src="{{asset('images\2.jpg')}}" class="tdimg6"></td>
 							</tr>
 							<tr>
 								<td class="td7">Content</td>
@@ -38,7 +38,7 @@
 							</tr>
 							<tr>
 								<td class="td10">status</td>
-								<td><input type="checkbox"></td>
+								<td><input type="checkbox" name="status" value="{{isset($findrec[0]->status) ? $findrec[0]->status:''}}"></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -58,7 +58,7 @@
 							</tr>
 							<tr>
 								<td></td>
-								<td><img src="images\2.jpg" class="tdimg6"></td>
+								<td><img src="{{asset('images\2.jpg')}}" class="tdimg6"></td>
 							</tr>
 							<tr>
 								<td class="td7">Content</td>
@@ -66,7 +66,11 @@
 							</tr>
 							<tr>
 								<td class="td10">status</td>
-								<td><input type="checkbox"></td>
+								@if(isset($findrec[0]->status)==0)
+								<td><input type="checkbox" name="status" checked></td>
+								@else
+								<td><input type="checkbox" name="status"></td>
+								@endif
 							</tr>
 							<tr>
 								<td></td>

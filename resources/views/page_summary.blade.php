@@ -55,7 +55,7 @@
 						<td>{{$row->id}}</td>
 			            <td>{{$row->pageName}}</td>
 			            <td>{{$row->content}}</td>
-			            <td>Status</td>
+			            <td>{{$row->status}}</td>
 			            <td><a href="{{'edit-disp/'.$row->id}}">Edit</a></td>
 			            <td><a href="{{'delete-data/'.$row->id}}">Delete</a></td>
 					</tr>

@@ -21,7 +21,6 @@
 						{{csrf_field()}}
 					<tr>
 						<td class="middle1">Search</td>
-					
 					</tr>
 					<tr>
 						<td class="middle2">
@@ -46,7 +45,7 @@
 					@foreach($data as $row)
 					<tr>
 						<td>{{$row->id}}</td>
-			            <td>{{$row->categoryName}}</td>
+			            <td>{{$row->cname}}</td>
 			            <td><a href="{{'edit-cat/'.$row->id}}">Edit</a></td><!-- {{'edit-disp/'.$row->id}} -->
 			            <td><a href="{{'delete-cat/'.$row->id}}">Delete</a></td>
 					</tr>

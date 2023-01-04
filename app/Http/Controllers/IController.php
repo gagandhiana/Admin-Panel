@@ -15,7 +15,9 @@ class IController extends Controller
     public function home_page(){
         return view("homepage");
     }
+
     // Login
+
     public function login_page(){
         return view("login");
     }
@@ -33,28 +35,38 @@ class IController extends Controller
     }
 
     // Logout
+
     public function logout_page(){
         session::flush();
         return redirect('login-page');
     }
 
     // Add Page  (Insert Data)
+
     public function page_det(Request $request){
         $add=new Page_details;
         if($request->isMethod('post'))
         {
             $add->pageName=$request->get('p_name');
             $add->content=$request->get('con_tent');
+            if(!empty($request->get('status'))){
+                $add->status = 1;
+            }else{
+                $add->status = 0;
+            }
             $add->save();
         }  
         return redirect("/homepage");
     }
     // Display Page Summary
+
     public function pagesummary(){
         $data=Page_details::paginate(2);
         return view('page_summary', compact('data'));
     }
+
     // Search Page
+
     public function search(Request $request){
         if($request->isMethod('post')){
             $name=$request->get('pName');
@@ -62,11 +74,13 @@ class IController extends Controller
         }
         return view('page_summary', compact('data'));
     }
+        
     public function editdisp($id){
         $findrec=Page_details::where('id',$id)->get();
         $data=Page_details::paginate(2);
         return view('homepage', compact('findrec'));
     }
+
     public function editdata(Request $request, $id=''){
         $add=Page_details::find($id);
         if($request->isMethod('post')){
@@ -76,15 +90,19 @@ class IController extends Controller
         }
         return redirect("/page_summary");
     }
+
     public function deletedata($id){
         $ob=Page_details::find($id);
         $ob->delete();
         return redirect("page_summary");
     }
+    
     public function addcat(){
         return view("add_cat");
     }
+
     // Add Category
+
     public function add_category(Request $request){
         $add=new Category_details;
         if($request->isMethod('post'))
@@ -94,10 +112,12 @@ class IController extends Controller
         }  
         return redirect("/add_cat");
     }
+
     public function categorysummary(){
         $data=Category_details::paginate(4);
         return view('category_summary', compact('data'));
     }
+
     public function searchcategory(Request $request){
          if($request->isMethod('post')){
             $name=$request->get('category');
@@ -105,16 +125,19 @@ class IController extends Controller
         }
         return view('category_summary', compact('data'));
     }
+
     public function delete_cat($id){
         $ob=Category_details::find($id);
         $ob->delete();
         return redirect("category_summary");
     }
+
     public function edit_cat($id){
         $findrec=Category_details::where('id',$id)->get();
         $data=Category_details::paginate(2);
         return view('add_cat', compact('findrec'));
     }
+
     public function edit_category(Request $request, $id=''){
          $add=Category_details::find($id);
          if($request->isMethod('post')){
@@ -132,6 +155,7 @@ class IController extends Controller
     }
 
     // Add Product
+
     public function add_product(Request $request){
         $add=new Product_details;
         if($request->isMethod('post'))
@@ -147,31 +171,35 @@ class IController extends Controller
                 $file->getClientOriginalName();
                 $file->getClientOriginalExtension();
                 $fullfilename=$current.".".$file->getClientOriginalExtension();
-                // print_R($fullfilename);
                 $destinationPath = public_path('product_images');
                 $file->move($destinationPath,$fullfilename);
-                $add->productImage=$fullfilename;            }
+                $add->productImage=$fullfilename;            
+            }
             $add->save();
         }  
         return redirect("/add_pro")->with('message','Inserted Successfully');
     }
+    
     public function prosummary(){
         $data=Product_details::paginate(2);
         return view('product_summary', compact('data'));
     }
+
     public function delete_pro($id){
        $ob=Product_details::find($id);
        unlink('product_images/' . $ob->productImage);
         $ob->delete();
         return redirect("product_summary");
     }
+
     public function edit_pro($id){
         $findrec=Product_details::where('id',$id)->get();
         $data=Product_details::paginate(2);
         return view('add_pro', compact('findrec','data'));
     }
+
     public function edit_product(Request $request, $id=''){
-        $add=new Product_details;
+        $add=Product_details::find($id);
          if($request->isMethod('post')){
             $add->cname=$request->get('cname');
             $add->productName=$request->get('pro_name');
@@ -183,7 +211,6 @@ class IController extends Controller
                 $file->getClientOriginalName();
                 $file->getClientOriginalExtension();
                 $fullfilename=$current.".".$file->getClientOriginalExtension();
-                // print_R($fullfilename);
                 $destinationPath = public_path('product_images');
                 $file->move($destinationPath,$fullfilename);
                 $add->productImage=$fullfilename;   
@@ -192,6 +219,7 @@ class IController extends Controller
         }  
         return redirect("/product_summary");
     }
+
     public function search_product(Request $request){
          if($request->isMethod('post')){
             $name=$request->get('pro_name');
@@ -199,15 +227,28 @@ class IController extends Controller
         }
         return view('product_summary', compact('data'));
     }
+
     public function change_pw(){
         $data=Login::paginate(2);
         return view('change_password', compact('data'));
     }
     public function change_password_submit(Request $request, $id=''){
-        $add = Login::find($id);
+        $add=Login::where('id',$id)->first();
         if ($request->isMethod('post')){
-            $password =$request->get('password');
-            $old_password =$request->get('old_pw');
-           }
+            $old_password =$request->get('oldpw');
+            $new_password =$request->get('newpw');
+            $confirm_password =$request->get('confirmpw');
+            if($add->password == $old_password){
+                if($confirm_password == $new_password){
+                     Login::where('id',$id)->update([
+                    'password' => $new_password,
+                ]);
+                return redirect('login-page')->with('message','Password Updated Successfully');
+                }
+           }else{
+            return redirect()->back()->with('message','Current Password does not match with Old Password');
+            }
+        }
+    }
 }
-   
+

@@ -20,12 +20,11 @@
 						{{csrf_field()}}
 					<tr>
 						<td class="middle1">Search</td>
-					
 					</tr>
 					<tr>
 						<td class="middle2">
 							Search By Product Name :
-							<input type="text" name="pName" class="minput1">
+							<input type="text" name="pro_name" class="minput1">
 						</td>
 					</tr>
 					<tr>
@@ -43,7 +42,6 @@
 				<table border="1" class="lower">
 					<tr class="lowertheading">
 						<th>Sr. No.</th>
-						<!-- <th>Category Name</th> -->
 						<th>Category Name</th>
 						<th>Product Name</th>
 						<th>Product Description</th>

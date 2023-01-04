@@ -20,9 +20,6 @@
 					</tr>
 					<tr>
 						<td><table class="righttable1">
-							<!-- @isset($findrecord[0]->id)
-			                        <form action="{{url('edit-form/'.$findrecord[0]->id)}}" method="post">	
-	                        @endisset -->
 	                        @if(isset($findrec))
 	                        <form action="{{url('edit-category/'.$findrec[0]->id)}}" method="post">
 								{{csrf_field()}}
